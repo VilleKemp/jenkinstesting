@@ -9,7 +9,7 @@ node {
         stage ('Build') {
             sh "echo 'shell scripts to build project...'"
             /*Get all the dependencies during this step. SeleniumTesting repo + etracker + docker containers+ browsermob. Make these into a single script after everything works*/
-                sh "git clone --depth =1 https://github.com/VilleKemp/SeleniumTesting.git"
+                sh "git clone --depth=1 https://github.com/VilleKemp/SeleniumTesting.git"
                 sh "git clone --depth=1 https://github.com/VilleKemp/ExerciseTracker.git"
 		sh "cd ExerciseTracker & git checkout WIP"
 		sh "cd .. "
