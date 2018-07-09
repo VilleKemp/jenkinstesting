@@ -8,7 +8,10 @@ node {
         }
 
         stage ('Get dependencies'){
-            sh "sudo sh environment/get_environment.sh"
+            sh "sh environment/get/get_git.sh"
+            sh "sh environment/get/get_browsermob.sh"
+            sh "sh environment/get/get_docker.sh"
+
         }
         stage ('Start environment') {
             sh "echo 'shell scripts to build project...'"    
