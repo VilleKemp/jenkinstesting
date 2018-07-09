@@ -10,7 +10,7 @@ node {
         stage ('Get dependencies'){
             sh "sh environment/get/get_git.sh"
             sh "sh environment/get/get_browsermob.sh"
-            sh "sh environment/get/get_docker.sh"
+            sh "sudo sh environment/get/get_docker.sh"
 
         }
         stage ('Start environment') {
