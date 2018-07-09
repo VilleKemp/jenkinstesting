@@ -11,7 +11,8 @@ node {
             /*Get all the dependencies during this step. SeleniumTesting repo + etracker + docker containers+ browsermob. Make these into a single script after everything works*/
                 sh "git clone --depth=1 https://github.com/VilleKemp/SeleniumTesting.git"
                 sh "git clone --depth=1 https://github.com/VilleKemp/ExerciseTracker.git"
-		sh "cd ExerciseTracker & git checkout WIP"
+		sh "cd ExerciseTracker"
+		sh "git checkout WIP"
 		sh "cd .. "
                 //This will brake if they update browsermob. TODO find a better way. Most likely using github api which didn't want to co-operate so I used this
                 sh "wget https://github.com/lightbody/browsermob-proxy/releases/download/browsermob-proxy-2.1.4/browsermob-proxy-2.1.4-bin.zip"
