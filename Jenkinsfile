@@ -10,9 +10,9 @@ node {
         stage ('Get dependencies'){
             sh "sudo sh environment/get_environment.sh"
         }
-        stage ('Build') {
+        stage ('Start environment') {
             sh "echo 'shell scripts to build project...'"    
-		
+		    sh "sh environment/start_environment.sh"
                 
 
         }
