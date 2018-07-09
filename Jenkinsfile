@@ -1,8 +1,8 @@
 /* 
 Jenkinsfile that executes the whole demo. WIP
 */
-pipeline {
-    agent any
+node {
+    
 
     stages {
         stage('Build') {
