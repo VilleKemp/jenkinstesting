@@ -9,8 +9,8 @@ node {
         stage ('Build') {
             sh "echo 'shell scripts to build project...'"
             /*Get all the dependencies during this step. SeleniumTesting repo + etracker + docker containers+ browsermob */
-                sh git clone 'https://github.com/VilleKemp/SeleniumTesting.git'
-                sh git clone 'https://github.com/VilleKemp/ExerciseTracker.git'
+                sh "git clone https://github.com/VilleKemp/SeleniumTesting.git"
+                sh "git clone https://github.com/VilleKemp/ExerciseTracker.git"
 
         }
         stage ('Tests') {
