@@ -11,6 +11,11 @@ node {
             /*Get all the dependencies during this step. SeleniumTesting repo + etracker + docker containers+ browsermob */
                 sh "git clone https://github.com/VilleKemp/SeleniumTesting.git"
                 sh "git clone https://github.com/VilleKemp/ExerciseTracker.git"
+                //This will brake if they update browsermob. TODO find a better way. Most likely using github api which didn't want to co-operate so I used this
+                sh "wget https://github.com/lightbody/browsermob-proxy/releases/download/browsermob-proxy-2.1.4/browsermob-proxy-2.1.4-bin.zip"
+                //This requires unzip. 
+                sh "unzip browsermob-proxy-2.1.4-bin.zip"
+                
 
         }
         stage ('Tests') {
