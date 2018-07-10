@@ -1,2 +1,2 @@
 #start etracker
-python /ExerciseTracker/forum.py
+python ExerciseTracker/forum.py
