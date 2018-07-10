@@ -35,13 +35,16 @@ node {
                 sh "echo 'shell scripts to run integration tests...'"
             }
         }
-        stage ('Destroy') {
-            sh "sudo sh environment/destroy/destroy_docker.sh"
-        }
+        
     } catch (err) {
         currentBuild.result = 'FAILED'
         throw err
-    }
+    } finally {
+    stage ('Destroy') {
+            sh "sudo sh environment/destroy/destroy_docker.sh"
+        }
+}
+    
 }
 
 
