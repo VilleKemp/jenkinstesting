@@ -15,9 +15,9 @@ node {
         }
         stage ('Start environment') {
             sh "echo 'shell scripts to build project...'"    
-            sh "sudo sh /home/ville/eclipse-workspace/demo/environment/start/start_docker.sh"
-            sh "sudo sh /home/ville/eclipse-workspace/demo/environment/start/start_browsermob.sh&"
-            sh "sudo sh /home/ville/eclipse-workspace/demo/environment/start/start_etracker.sh&"
+            sh "sudo sh environment/start/start_docker.sh"
+            sh "sudo sh environment/start/start_browsermob.sh&"
+            sh "sudo sh environment/start/start_etracker.sh&"
                 
 
         }
@@ -33,7 +33,7 @@ node {
             }
         }
         stage ('Destroy') {
-            sh "sudo sh /home/ville/eclipse-workspace/demo/environment/destroy/destroy_docker.sh"
+            sh "sudo sh environment/destroy/destroy_docker.sh"
         }
     } catch (err) {
         currentBuild.result = 'FAILED'
