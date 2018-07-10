@@ -22,6 +22,13 @@ node {
 
         }
         stage ('Tests') {
+
+
+            wrap([$class: 'Xvfb'](Screen:'1440x900x24')) {
+  // execute selenium tests
+                sh "ant -buildfile SeleniumTesting/build.xml basictest"
+            }
+
             parallel 'static': {
                 sh "echo 'shell scripts to run static tests...'"
             },
@@ -29,7 +36,7 @@ node {
                 sh "echo 'shell scripts to run unit tests...'"
                 
                 
-                sh "xvfb-run ant -buildfile SeleniumTesting/build.xml basictest"
+                
                 
             },
             'integration': {
