@@ -28,7 +28,8 @@ node {
             'unit': {
                 sh "echo 'shell scripts to run unit tests...'"
                 //Go to SeleniumTesting and execute unit test. Then go back to root so later stuff won't break
-                sh "cd SeleniumTesting & ant SeleniumTesting/basictest"
+                sh "cd SeleniumTesting"
+                sh "ant basictest"
                 sh "cd .."
             },
             'integration': {

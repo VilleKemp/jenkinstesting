@@ -13,7 +13,8 @@ Jenkinsfile sets up mutillidae using docker, Swagger-petstore using docker, exer
 * Change SCM to Git and add this repos url to the Repository url field
 * Save and Build
 
-
+## TODO
+* Our current iteration expects jenkins to have sudo permissions to bin/sh in docker scripts. Path should be changed to $JENKINS_WORKDIRECTORY$/enviroment/script_folder/script.sh
 
 
 
