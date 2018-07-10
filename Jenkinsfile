@@ -11,11 +11,13 @@ node {
             sh "sh environment/get/get_git.sh"
             sh "sh environment/get/get_browsermob.sh"
             sh "sudo sh environment/get/get_docker.sh"
-
+            
         }
         stage ('Start environment') {
             sh "echo 'shell scripts to build project...'"    
-		    sh "sh environment/start_environment.sh"
+            sh "sudo sh /home/ville/eclipse-workspace/demo/environment/start/start_docker.sh"
+            sh "sudo sh /home/ville/eclipse-workspace/demo/environment/start/start_browsermob.sh"
+            sh "sudo sh /home/ville/eclipse-workspace/demo/environment/start/start_etracker.sh"
                 
 
         }
@@ -30,8 +32,8 @@ node {
                 sh "echo 'shell scripts to run integration tests...'"
             }
         }
-        stage ('Deploy') {
-            sh "echo 'shell scripts to deploy to server...'"
+        stage ('Destroy') {
+            sh "sudo sh /home/ville/eclipse-workspace/demo/environment/destroy/destroy_docker.sh"
         }
     } catch (err) {
         currentBuild.result = 'FAILED'
