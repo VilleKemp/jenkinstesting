@@ -29,7 +29,7 @@ node {
                 sh "echo 'shell scripts to run unit tests...'"
                 
                 
-                sh "ant -buildfile SeleniumTesting/build.xml basictest"
+                sh "xvfb-run ant -buildfile SeleniumTesting/build.xml basictest"
                 
             },
             'integration': {
