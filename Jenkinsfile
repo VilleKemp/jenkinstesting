@@ -24,7 +24,7 @@ node {
         stage ('Tests') {
 
 
-            wrap([$class: 'Xvfb'](Screen:'1440x900x24')) {
+            wrap([$class: 'Xvfb']) {
   // execute selenium tests
                 sh "ant -buildfile SeleniumTesting/build.xml basictest"
             }
