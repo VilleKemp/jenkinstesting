@@ -27,6 +27,7 @@ node {
             },
             'unit': {
                 sh "echo 'shell scripts to run unit tests...'"
+                sh "ant basictest"
             },
             'integration': {
                 sh "echo 'shell scripts to run integration tests...'"
