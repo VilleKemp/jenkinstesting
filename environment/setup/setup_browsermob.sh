@@ -4,6 +4,8 @@ curl -X POST -d "port=8081" http://localhost:8181/proxy
 sleep 1
 curl -X PUT -d "captureContent=true" -d "captureHeaders=true" -d "captureCookies=true" -d "captureBinaryContent=true" http://localhost:8181/proxy/8081/har 
 sleep 1
+echo "setting up mutillidae database"
 # Set mutillidae database
 curl http://localhost/mutillidae/set-up-database.php
+sleep 1
 
