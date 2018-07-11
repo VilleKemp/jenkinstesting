@@ -16,17 +16,18 @@ node {
         stage ('Start environment') {
             sh "echo 'shell scripts to build project...'"    
             sh "sudo sh environment/start/start_docker.sh"
-            sh "sh environment/start/start_browsermob.sh &"
-            sh "sh environment/start/start_etracker.sh &"
-            sh "sh environment/setup/setup_browsermob.sh "    
+            
+            //sh "sh environment/start/start_etracker.sh &"
+            sh "sudo sh environment/start/start_browsermob.sh &"
+            sh "sh environment/setup/setup_browsermob.sh " 
 
         }
         stage ('Tests') {
-
-
+             
             wrap([$class: 'Xvfb',displayNameOffset: 10]) {
   // execute selenium tests
                 sh "ant -buildfile SeleniumTesting/build.xml basictest"
+            sh "ant -buildfile harParser/build.xml HarParser"
             }
 
             
@@ -37,7 +38,6 @@ node {
 	}
 
         stage ('Post test') {
-        sh "ant -buildfile harParser/build.xml HarParser"
         }
 
     } catch (err) {
