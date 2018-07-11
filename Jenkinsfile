@@ -32,6 +32,10 @@ node {
             
         }
         
+	stage ('Defensics sequence') {
+		sh "sudo sh environment/defensics/defensics_launch.sh"
+	}
+
         stage ('Post test') {
         sh "ant -buildfile harParser/build.xml HarParser"
         }
