@@ -29,21 +29,13 @@ node {
                 sh "ant -buildfile SeleniumTesting/build.xml basictest"
             }
 
-            parallel 'static': {
-                sh "echo 'shell scripts to run static tests...'"
-            },
-            'unit': {
-                sh "echo 'shell scripts to run unit tests...'"
-                
-                
-                
-                
-            },
-            'integration': {
-                sh "echo 'shell scripts to run integration tests...'"
-            }
+            
         }
         
+        stage ('Post test') {
+        sh "ant -buildfile harParser/build.xml HarParser"
+        }
+
     } catch (err) {
         currentBuild.result = 'FAILED'
         throw err
