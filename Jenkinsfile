@@ -16,9 +16,9 @@ node {
         stage ('Start environment') {
             sh "echo 'shell scripts to build project...'"    
             sh "sudo sh environment/start/start_docker.sh"
-            sh "sh environment/start/start_browsermob.sh&"
-            sh "sh environment/start/start_etracker.sh&"
-                
+            sh "sh environment/start/start_browsermob.sh &"
+            sh "sh environment/start/start_etracker.sh &"
+            sh "sh environment/setup/setup_browsermob.sh "    
 
         }
         stage ('Tests') {
