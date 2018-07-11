@@ -16,29 +16,35 @@ node {
         stage ('Start environment') {
             sh "echo 'shell scripts to build project...'"    
             sh "sudo sh environment/start/start_docker.sh"
-            sh "sudo sh environment/start/start_browsermob.sh&"
-            sh "sudo sh environment/start/start_etracker.sh&"
-                
+            sh "sh environment/start/start_browsermob.sh &"
+            //sh "sh environment/start/start_etracker.sh &"
+            sh "sh environment/setup/setup_browsermob.sh "    
 
         }
         stage ('Tests') {
-            parallel 'static': {
-                sh "echo 'shell scripts to run static tests...'"
-            },
-            'unit': {
-                sh "echo 'shell scripts to run unit tests...'"
-            },
-            'integration': {
-                sh "echo 'shell scripts to run integration tests...'"
+
+
+            wrap([$class: 'Xvfb',displayNameOffset: 10]) {
+  // execute selenium tests
+                sh "ant -buildfile SeleniumTesting/build.xml basictest"
             }
+
+            
         }
-        stage ('Destroy') {
-            sh "sudo sh environment/destroy/destroy_docker.sh"
+        
+        stage ('Post test') {
+        sh "ant -buildfile harParser/build.xml HarParser"
         }
+
     } catch (err) {
         currentBuild.result = 'FAILED'
         throw err
-    }
+    } finally {
+    stage ('Destroy') {
+            sh "sudo sh environment/destroy/destroy_docker.sh"
+        }
+}
+    
 }
 
 
