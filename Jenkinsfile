@@ -34,7 +34,6 @@ node {
         }
         
         stage ('Post test') {
-        
         }
 
     } catch (err) {
