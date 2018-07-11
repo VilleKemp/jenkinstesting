@@ -8,6 +8,6 @@ curl -X PUT -d "captureContent=true" -d "captureHeaders=true" -d "captureCookies
 sleep 1
 echo "curl"
 # Set mutillidae database
-curl http://localhost/mutillidae/set-up-database.php
+curl http://localhost:81/mutillidae/set-up-database.php
 sleep 1
 
