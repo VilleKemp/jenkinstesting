@@ -4,4 +4,6 @@ git clone --depth=1 https://github.com/VilleKemp/SeleniumTesting.git
 git clone -b WIP https://github.com/VilleKemp/ExerciseTracker.git
 
 pip install flask flask_restful
+#harparser
+git clone https://github.com/VilleKemp/harParser.git
 
