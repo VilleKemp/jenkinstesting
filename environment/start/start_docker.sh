@@ -5,4 +5,3 @@ sudo docker run -d -p 81:80 -p 443:443 --name owasp17 bltsec/mutillidae-docker
 sudo docker run -d --name petstore -e SWAGGER_BASE_PATH=/v2 -p 8080:8080 swaggerapi/petstore
 
 
-
