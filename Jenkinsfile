@@ -22,7 +22,7 @@ node {
 
         }
         stage ('Tests') {
-            sh "sh environment/start/start_browsermob.sh &"
+            sh "sudo sh environment/start/start_browsermob.sh &"
             sh "sh environment/setup/setup_browsermob.sh "  
             wrap([$class: 'Xvfb',displayNameOffset: 10]) {
   // execute selenium tests
