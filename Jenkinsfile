@@ -40,7 +40,7 @@ node {
         "DEFENSICS_BOOTJAR_PATH = /home/ville/defensics/Defensics/monitor/boot.jar",
         "DEFENSICS_SUITE_PATH = /home/ville/defensics/Defensics/web-app-3.6.0/testtool/web-app-360.jar"]){    
 	stage ('Defensics sequence') {
-		sh "sudo sh environment/defensics/defensics_launch.sh $DEFENSICS_BOOTJAR_PATH $DEFENSICS_SUITE_PATH $SEQUENCE_FILE_PATH"
+		sh "sudo sh environment/defensics/defensics_launch.sh ${DEFENSICS_BOOTJAR_PATH} ${DEFENSICS_SUITE_PATH} ${SEQUENCE_FILE_PATH}"
 	}}
 
         stage ('Post test') {
