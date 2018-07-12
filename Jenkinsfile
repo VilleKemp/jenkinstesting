@@ -22,6 +22,7 @@ node {
             sh "sh environment/setup/setup_browsermob.sh " 
 
         }
+	
         stage ('Tests') {
              
             wrap([$class: 'Xvfb',displayNameOffset: 10]) {
@@ -33,6 +34,10 @@ node {
             
         }
         
+	stage ('Defensics sequence') {
+		sh "sudo sh environment/defensics/defensics_launch.sh"
+	}
+
         stage ('Post test') {
         }
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<sequences>
+    <sequence name="http-diag">
+        <description name="mutillidaefuzz">Target domain: detectportal.firefox.com</description>
+        <setting arg="--host">localhost</setting>
+        <setting arg="--port">81</setting>
+        <setting arg="--http"/>
+        <add-on file="mutillidaefuzz-addon.bbx"/>
+        <send channel="tcp" name="request-GET-4" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-GET-4.txx" format="text"/>
+        </send>
+        <recv channel="tcp" name="response-200_OK-5" type="HTTP-Response">
+            <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
+        </recv>
+        <send channel="tcp" name="request-GET-62" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-GET-62.txx" format="text"/>
+        </send>
+        <recv channel="tcp" name="response-200_OK-63" type="HTTP-Response">
+            <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
+        </recv>
+    </sequence>
+</sequences>
