@@ -16,7 +16,7 @@ DEFENSICS_SUITE_PATH = "/home/ville/defensics/Defensics/web-app-3.6.0/testtool/w
 
     
 
-    try {
+    
         stage ('Clone') {
             // Clean workspace before doing anything
             deleteDir()
@@ -48,7 +48,7 @@ DEFENSICS_SUITE_PATH = "/home/ville/defensics/Defensics/web-app-3.6.0/testtool/w
             }
 
             
-        }
+       
     
      
 	stage ('Defensics sequence') {
@@ -56,17 +56,22 @@ DEFENSICS_SUITE_PATH = "/home/ville/defensics/Defensics/web-app-3.6.0/testtool/w
 	}
 
         stage ('Post test') {
+        
+           }
+
+    }
+    
+
+    }  
+    post{
+        always{
+
+            sh "sudo sh environment/destroy/destroy_docker.sh"
+        
+            }
         }
 
-    } catch (err) {
-        currentBuild.result = 'FAILED'
-        throw err
-    } finally {
-    stage ('Destroy') {
-            sh "sudo sh environment/destroy/destroy_docker.sh"
-        }
-}
-}    
+  
 }
 
 
