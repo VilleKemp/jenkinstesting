@@ -13,7 +13,7 @@ node {
         stage ('Clone') {
             checkout scm
             echo "${env.WORKSPACE}"
-            echo "$DEFENSICS_BOOTJAR_PATH"
+            echo "is this right? $DEFENSICS_BOOTJAR_PATH"
         }
 
         stage ('Get dependencies'){
