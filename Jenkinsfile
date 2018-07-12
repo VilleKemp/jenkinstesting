@@ -1,20 +1,25 @@
-node {
+pipeline {
     //Set your defensics path 
     // example "/home/user/x/x/boot.jar"
-  
+    agent any
     environment{
 SEQUENCE_FILE_PATH = "${env.WORKSPACE}/environment/defensics/sequence/mutillidaefuzz.seq"
 DEFENSICS_BOOTJAR_PATH = "/home/ville/defensics/Defensics/monitor/boot.jar"
 DEFENSICS_SUITE_PATH = "/home/ville/defensics/Defensics/web-app-3.6.0/testtool/web-app-360.jar"}
+    
+    stages{
+
+
     stage('test'){
     sh 'printenv'
     }
 
-    // Clean workspace before doing anything
-    deleteDir()
+    
 
     try {
         stage ('Clone') {
+            // Clean workspace before doing anything
+            deleteDir()
             checkout scm
         }
 
@@ -61,7 +66,7 @@ DEFENSICS_SUITE_PATH = "/home/ville/defensics/Defensics/web-app-3.6.0/testtool/w
             sh "sudo sh environment/destroy/destroy_docker.sh"
         }
 }
-    
+}    
 }
 
 
