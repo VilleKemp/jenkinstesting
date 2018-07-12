@@ -6,10 +6,6 @@ pipeline {
     //Set your defensics path 
     // example "/home/user/x/x/boot.jar"
     environment{
-//Change these
-DEFENSICS_BOOTJAR_PATH = ""
-DEFENSICS_SUITE_PATH = ""
-//Don't modify this!
 SEQUENCE_FILE_PATH = "${env.WORKSPACE}/environment/defensics/sequence/mutillidaefuzz.seq"
 }
     
@@ -57,7 +53,7 @@ SEQUENCE_FILE_PATH = "${env.WORKSPACE}/environment/defensics/sequence/mutillidae
      
     	stage ('Defensics sequence') {
             steps{
-		        sh "sudo sh environment/defensics/defensics_launch.sh ${DEFENSICS_BOOTJAR_PATH} ${DEFENSICS_SUITE_PATH} ${SEQUENCE_FILE_PATH}"
+		        sh "sudo sh environment/defensics/defensics_launch.sh ${SEQUENCE_FILE_PATH}"
 	            }
             }
 
