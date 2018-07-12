@@ -6,6 +6,15 @@ This is a repository containing a Jenkins file which is supposed to set up a dem
 ## Environment
 Jenkinsfile sets up mutillidae using docker, Swagger-petstore using docker, exersicetracker rest api using python, browsermob and set of tests done in Junit and selenium 
 
+## Requirements
+java 8
+firefox and firefox driver
+docker
+jenkins
+xvfb jenkins plugin
+Defensics?
+
+
 ## How to use this?
 * Install jenkins
 * Create a pipeline project
