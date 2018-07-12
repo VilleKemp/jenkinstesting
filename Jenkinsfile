@@ -61,9 +61,6 @@ DEFENSICS_SUITE_PATH = "/home/ville/defensics/Defensics/web-app-3.6.0/testtool/w
 		        sh "sudo sh environment/defensics/defensics_launch.sh ${DEFENSICS_BOOTJAR_PATH} ${DEFENSICS_SUITE_PATH} ${SEQUENCE_FILE_PATH}"
 	            }
             }
-        stage ('Post test') {
-        
-           }
 
     }  
     post{
