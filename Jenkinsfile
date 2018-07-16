@@ -57,7 +57,7 @@ SEQUENCE_FILE_PATH = "${env.WORKSPACE}/environment/defensics/sequence/mutillidae
     post{
         always{
 
-            sh "sudo sh environment/destroy/destroy_docker.sh"
+            sh "sudo sh ${env.WORKSPACE}/environment/destroy/destroy_docker.sh"
         
             }
         }
