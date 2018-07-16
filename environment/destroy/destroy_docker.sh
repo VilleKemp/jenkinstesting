@@ -1,5 +1,6 @@
+#!/bin/bash
 #destroy docker containers
-sudo docker kill petstore
-sudo docker kill owasp17
-sudo docker rm petstore
-sudo docker rm owasp17
+docker kill petstore
+docker kill owasp17
+docker rm petstore
+docker rm owasp17
