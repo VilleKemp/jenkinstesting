@@ -4,4 +4,5 @@ sudo docker run -d -p 81:80 -p 443:443 --name owasp17 bltsec/mutillidae-docker
 #Give it a name so it is easier to remove
 sudo docker run -d --name petstore -e SWAGGER_BASE_PATH=/v2 -p 8080:8080 swaggerapi/petstore
 
-
+# Set mutillidae database. Silence output due to its huge size
+curl -s http://localhost:81/mutillidae/set-up-database.php > /dev/null
