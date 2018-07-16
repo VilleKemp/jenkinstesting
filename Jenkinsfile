@@ -20,15 +20,14 @@ SEQUENCE_FILE_PATH = "${env.WORKSPACE}/environment/defensics/sequence/mutillidae
                 steps{
                     sh "sh environment/get/get_git.sh"
                     sh "sh environment/get/get_browsermob.sh"
-                    // Docker scripts are executed with full path due to permission issues. You are expected to give jenkins sudo rights to docker scripts. In order for it to work script needs to be executed using full path
-                    sh "sudo ${env.WORKSPACE}/environment/get/get_docker.sh"
+                    sh "sh environment/get/get_docker.sh"
                     }
         }
 
         stage ('Start environment') {
             steps{
                 sh "echo 'shell scripts to build project...'"
-                sh "sudo ${env.WORKSPACE}/environment/start/start_docker.sh"
+                sh "sh environment/start/start_docker.sh"
                 sh "sh environment/start/start_browsermob.sh &"
                 sh "sh environment/setup/setup_browsermob.sh " 
                 }
@@ -57,7 +56,7 @@ SEQUENCE_FILE_PATH = "${env.WORKSPACE}/environment/defensics/sequence/mutillidae
     post{
         always{
 
-            sh "sudo ${env.WORKSPACE}/environment/destroy/destroy_docker.sh"
+            sh "sh environment/destroy/destroy_docker.sh"
         
             }
         }
