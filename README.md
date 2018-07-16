@@ -32,14 +32,15 @@ Jenkinsfile will fetch the above components but it requires the following in ord
 * firefox driver accessible from command line
 * docker
 * jenkins
+* xvfb 
 * xvfb jenkins plugin
 * Defensics
 * ant
 * git
 
 Other:
-* ports 8080 and 81 open. Petshop will be hosted in localhost:8080 and mutillidae at localhost:81/mutillidae
-* Docker scripts are executed as sudo. You need to give docker the permissions to execute start/destroy docker scripts
+* Ports 8080,8181 and 81 open. Petshop will be hosted in localhost:8080 and mutillidae at localhost:81/mutillidae
+* Make sure jenkis has the permission to use docker. One way is to add jenkins to the docker group. ``` sudo usermod -aG docker jenkins ``` If you use this it will give jenkins root level privileges. Please check https://docs.docker.com/install/linux/linux-postinstall/ for more details
 
 
 ## How to use this?
@@ -49,8 +50,7 @@ Other:
 * Change SCM to Git and add this repos url to the Repository url field
 * Save and Build
 
-## TODO
-* Our current iteration expects jenkins to have sudo permissions to bin/sh in docker scripts. Path should be changed to $JENKINS_WORKDIRECTORY$/enviroment/script_folder/script.sh
+
 
 
 
