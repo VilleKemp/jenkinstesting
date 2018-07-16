@@ -27,7 +27,7 @@ SEQUENCE_FILE_PATH = "${env.WORKSPACE}/environment/defensics/sequence/mutillidae
         stage ('Start environment') {
             steps{
                 sh "echo 'Start docker instances'"
-                sh "sh environment/start/start_docker.sh"
+                sh "sh environment/start/start_docker.sh || true"
 		sh "echo 'Start browsermob'"
                 sh "sh environment/start/start_browsermob.sh &"
                 sh "sh environment/setup/setup_browsermob.sh " 
