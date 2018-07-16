@@ -49,7 +49,7 @@ SEQUENCE_FILE_PATH = "${env.WORKSPACE}/environment/defensics/sequence/mutillidae
      
     	stage ('Defensics sequence') {
             steps{
-		        sh "sudo sh environment/defensics/defensics_launch.sh ${SEQUENCE_FILE_PATH}"
+		        sh "sh environment/defensics/defensics_launch.sh ${SEQUENCE_FILE_PATH}"
 	            }
             }
 
