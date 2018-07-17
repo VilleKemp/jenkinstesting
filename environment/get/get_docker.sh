@@ -1,3 +1,4 @@
+#!/bin/bash
 #docker pulls
 #Due to docker this script will be run using sudo.
 #to give Jenkins priviliges to do so execute the following

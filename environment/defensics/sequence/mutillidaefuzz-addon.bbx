@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<add-on>
+    <symbols>
+        <rule built-in="tcp-rule-with-proxy" name="http-localhost-81">
+            <setting name="timeout" param="input-timeout"/>
+            <setting name="outtimeout" param="output-timeout"/>
+            <value param="server-host">localhost</value>
+            <value param="server-port">81</value>
+            <value param="secure">false</value>
+            <setting name="proxy" param="proxy-enabled"/>
+            <setting name="proxy-host" param="proxy-host"/>
+            <setting name="proxy-port" param="proxy-port"/>
+            <setting name="proxy-secure-port" param="proxy-secure-port"/>
+            <value param="max-input-size">10000</value>
+            <value param="half-close">true</value>
+        </rule>
+        <modify mask="referer-sample-values">
+      ('/')
+    | ('http://localhost:8080/')
+    | ('/swagger-ui.css')
+    | ('http://localhost:8080/swagger-ui.css')
+    | ('/swagger-ui-standalone-preset.js')
+    | ('http://localhost:8080/swagger-ui-standalone-preset.js')
+    | ('/swagger-ui-bundle.js')
+    | ('http://localhost:8080/swagger-ui-bundle.js')
+    | ('/public/favicon-16x16.png')
+    | ('http://localhost:8080/public/favicon-16x16.png')
+    | ('/v2/swagger.json')
+    | ('http://localhost:8080/v2/swagger.json')
+    | ('/v2/pet')
+    | ('http://localhost:8080/v2/pet')
+    | ('/v2/pet/21')
+    | ('http://localhost:8080/v2/pet/21')
+    | ('/mutillidae/index.php?page=user-info.php')
+    | ('http://localhost:81/mutillidae/index.php?page=user-info.php')
+    | ('/mutillidae/styles/global-styles.css')
+    | ('http://localhost:81/mutillidae/styles/global-styles.css')
+    | ('/mutillidae/styles/ddsmoothmenu/ddsmoothmenu-v.css')
+    | ('http://localhost:81/mutillidae/styles/ddsmoothmenu/ddsmoothmenu-v.css')
+    | ('/mutillidae/styles/ddsmoothmenu/ddsmoothmenu.css')
+    | ('http://localhost:81/mutillidae/styles/ddsmoothmenu/ddsmoothmenu.css')
+    | ('/mutillidae/javascript/ddsmoothmenu/jquery.min.js')
+    | ('http://localhost:81/mutillidae/javascript/ddsmoothmenu/jquery.min.js')
+    | ('/mutillidae/javascript/ddsmoothmenu/ddsmoothmenu.js')
+    | ('http://localhost:81/mutillidae/javascript/ddsmoothmenu/ddsmoothmenu.js')
+    | ('/mutillidae/javascript/bookmark-site.js')
+    | ('http://localhost:81/mutillidae/javascript/bookmark-site.js')
+    | ('/mutillidae/javascript/jQuery/colorbox/colorbox.css')
+    | ('http://localhost:81/mutillidae/javascript/jQuery/colorbox/colorbox.css')
+    | ('/mutillidae/javascript/jQuery/jquery.js')
+    | ('http://localhost:81/mutillidae/javascript/jQuery/jquery.js')
+    | ('/mutillidae/javascript/jQuery/colorbox/jquery.colorbox-min.js')
+    | ('http://localhost:81/mutillidae/javascript/jQuery/colorbox/jquery.colorbox-min.js')
+    | ('/mutillidae/javascript/jQuery/jquery.balloon.js')
+    | ('http://localhost:81/mutillidae/javascript/jQuery/jquery.balloon.js')
+    | ('/mutillidae/images/coykillericon-50-38.png')
+    | ('http://localhost:81/mutillidae/images/coykillericon-50-38.png')
+    | ('/mutillidae/images/youtube-48-48.png')
+    | ('http://localhost:81/mutillidae/images/youtube-48-48.png')
+    | ('/mutillidae/images/twitter-bird-48-48.png')
+    | ('http://localhost:81/mutillidae/images/twitter-bird-48-48.png')
+    | ('/mutillidae/images/help-easy-button-48-48.png')
+    | ('http://localhost:81/mutillidae/images/help-easy-button-48-48.png')
+    | ('/mutillidae/images/pdf-icon-48-48.png')
+    | ('http://localhost:81/mutillidae/images/pdf-icon-48-48.png')
+    | ('/mutillidae/images/back-button-64-64.png')
+    | ('http://localhost:81/mutillidae/images/back-button-64-64.png')
+    | ('/mutillidae/images/down_arrow_16_16.png')
+    | ('http://localhost:81/mutillidae/images/down_arrow_16_16.png')
+    | ('/mutillidae/images/link-icon-16-16.png')
+    | ('http://localhost:81/mutillidae/images/link-icon-16-16.png')
+    | ('/mutillidae/images/ajax_logo-75-79.jpg')
+    | ('http://localhost:81/mutillidae/images/ajax_logo-75-79.jpg')
+    | ('/mutillidae/images/xml-logo-64-64.png')
+    | ('http://localhost:81/mutillidae/images/xml-logo-64-64.png')
+    | ('/mutillidae/images/right.gif')
+    | ('http://localhost:81/mutillidae/images/right.gif')
+    | ('/mutillidae/images/favicon.ico')
+    | ('http://localhost:81/mutillidae/images/favicon.ico')
+    | ('/mutillidae/index.php?page=user-info.php' 0x26 'username=testuser1' 0x26 'password=password123' 0x26 'user-info-php-submit-button=View+Account+Details')
+    | ('http://localhost:81/mutillidae/index.php?page=user-info.php' 0x26 'username=testuser1' 0x26 'password=password123' 0x26 'user-info-php-submit-button=View+Account+Details')
+    | ('/mutillidae/index.php?page=xml-validator.php')
+    | ('http://localhost:81/mutillidae/index.php?page=xml-validator.php')
+    | ('/mutillidae/incorrectlocation')
+    | ('http://localhost:81/mutillidae/incorrectlocation')
+    | ('/favicon.ico')
+    | ('http://localhost:81/favicon.ico')
+    | ('/v2/store/inventory')
+    | ('http://localhost:8080/v2/store/inventory')
+    | ('/v2/store/order')
+    | ('http://localhost:8080/v2/store/order')
+    | ('/mutillidae/index.php?page=repeater.php')
+    | ('http://localhost:81/mutillidae/index.php?page=repeater.php')
+</modify>
+        <modify mask="close-all-tcp">
+    !http-localhost-81:close ()
+</modify>
+    </symbols>
+</add-on>
