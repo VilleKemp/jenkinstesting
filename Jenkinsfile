@@ -3,7 +3,7 @@ pipeline {
     agent any
     // Set your sequence file path here.
     environment{
-SEQUENCE_FILE_PATH = "${env.WORKSPACE}/environment/defensics/sequence/mutillidaefuzz.seq"
+SEQUENCE_FILE_PATH = "${env.WORKSPACE}/environment/defensics/mutillidaefuzz.seq"
 HAR_FILE_PATH = "${env.WORKSPACE}/harParser/connections.har"
 }
     
