@@ -3,8 +3,9 @@ pipeline {
     agent any
     // Set your sequence file path here.
     environment{
-SEQUENCE_FILE_PATH = "${env.WORKSPACE}/environment/defensics/mutillidaefuzz.seq"
+SEQUENCE_FILE_PATH = "${env.WORKSPACE}/environment/defensics/sequence/mutillidaefuzz.seq"
 HAR_FILE_PATH = "${env.WORKSPACE}/harParser/connections.har"
+RESULT_PATH = "${env.WORKSPACE}environment/defensics/results"
 }
     
     stages{
@@ -50,7 +51,7 @@ HAR_FILE_PATH = "${env.WORKSPACE}/harParser/connections.har"
      
     	stage ('Defensics sequence') {
             steps{
-		        sh "sh environment/defensics/defensics_launch.sh ${SEQUENCE_FILE_PATH} ${HAR_FILE_PATH} "
+		        sh "sh environment/defensics/defensics_launch.sh ${SEQUENCE_FILE_PATH} ${HAR_FILE_PATH} ${RESULT_PATH} "
 	            }
             }
 
