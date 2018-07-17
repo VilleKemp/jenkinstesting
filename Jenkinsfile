@@ -4,7 +4,7 @@ pipeline {
     // Set your sequence file path here.
     environment{
 SEQUENCE_FILE_PATH = "${env.WORKSPACE}/environment/defensics/sequence/mutillidaefuzz.seq"
-HAR_FILE_PATH = "${env.WORKSPACE}/harParser/connections.har
+HAR_FILE_PATH = "${env.WORKSPACE}/harParser/connections.har"
 }
     
     stages{
