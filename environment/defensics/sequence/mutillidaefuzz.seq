@@ -12,53 +12,119 @@
         <recv channel="tcp" name="response-200_OK-13" type="HTTP-Response">
             <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
         </recv>
-        <send channel="tcp" name="request-POST-26" type="HTTP-Request">
-            <content file="mutillidaefuzz-request-POST-26.txx" format="text"/>
+        <trigger parameter="open" rule="http-localhost-81"/>
+        <send channel="http-localhost-81" name="request-GET-14" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-GET-14.txx" format="text"/>
         </send>
-        <recv channel="tcp" name="response-404_Not_Found-27" type="HTTP-Response">
+        <recv channel="http-localhost-81" name="response-200_OK-15" type="HTTP-Response">
+            <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
+        </recv>
+        <send channel="http-localhost-81" name="request-GET-58" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-GET-58.txx" format="text"/>
+        </send>
+        <recv channel="http-localhost-81" name="response-200_OK-59" type="HTTP-Response">
+            <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
+        </recv>
+        <send channel="http-localhost-81" name="request-POST-62" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-POST-62.txx" format="text"/>
+        </send>
+        <recv channel="http-localhost-81" name="response-200_OK-63" type="HTTP-Response">
+            <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
+        </recv>
+        <send channel="http-localhost-81" name="request-GET-64" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-GET-64.txx" format="text"/>
+        </send>
+        <recv channel="http-localhost-81" name="response-200_OK-65" type="HTTP-Response">
+            <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
+        </recv>
+        <send channel="tcp" name="request-POST-122" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-POST-122.txx" format="text"/>
+        </send>
+        <recv channel="tcp" name="response-404_Not_Found-123" type="HTTP-Response">
             <trigger parameter="expectedStatus" rule="WebAppController">'404'</trigger>
         </recv>
-        <trigger parameter="open" rule="http-localhost-81"/>
-        <send channel="http-localhost-81" name="request-GET-28" type="HTTP-Request">
-            <content file="mutillidaefuzz-request-GET-28.txx" format="text"/>
+        <send channel="tcp" name="request-PUT-136" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-PUT-136.txx" format="text"/>
         </send>
-        <recv channel="http-localhost-81" name="response-200_OK-29" type="HTTP-Response">
+        <recv channel="tcp" name="response-200_OK-137" type="HTTP-Response">
             <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
         </recv>
-        <send channel="http-localhost-81" name="request-GET-74" type="HTTP-Request">
-            <content file="mutillidaefuzz-request-GET-74.txx" format="text"/>
+        <send channel="http-localhost-81" name="request-GET-138" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-GET-138.txx" format="text"/>
         </send>
-        <recv channel="http-localhost-81" name="response-200_OK-75" type="HTTP-Response">
+        <recv channel="http-localhost-81" name="response-200_OK-139" type="HTTP-Response">
             <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
         </recv>
-        <send channel="http-localhost-81" name="request-GET-76" type="HTTP-Request">
-            <content file="mutillidaefuzz-request-GET-76.txx" format="text"/>
+        <send channel="http-localhost-81" name="request-GET-184" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-GET-184.txx" format="text"/>
         </send>
-        <recv channel="http-localhost-81" name="response-200_OK-77" type="HTTP-Response">
+        <recv channel="http-localhost-81" name="response-200_OK-185" type="HTTP-Response">
             <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
         </recv>
-        <send channel="http-localhost-81" name="request-POST-118" type="HTTP-Request">
-            <content file="mutillidaefuzz-request-POST-118.txx" format="text"/>
+        <send channel="http-localhost-81" name="request-GET-186" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-GET-186.txx" format="text"/>
         </send>
-        <recv channel="http-localhost-81" name="response-200_OK-119" type="HTTP-Response">
+        <recv channel="http-localhost-81" name="response-200_OK-187" type="HTTP-Response">
             <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
         </recv>
-        <send channel="tcp" name="request-POST-166" type="HTTP-Request">
-            <content file="mutillidaefuzz-request-POST-166.txx" format="text"/>
+        <send channel="http-localhost-81" name="request-POST-230" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-POST-230.txx" format="text"/>
         </send>
-        <recv channel="tcp" name="response-200_OK-167" type="HTTP-Response">
+        <recv channel="http-localhost-81" name="response-200_OK-231" type="HTTP-Response">
             <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
         </recv>
-        <send channel="http-localhost-81" name="request-GET-168" type="HTTP-Request">
-            <content file="mutillidaefuzz-request-GET-168.txx" format="text"/>
+        <send channel="http-localhost-81" name="request-POST-232" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-POST-232.txx" format="text"/>
         </send>
-        <recv channel="http-localhost-81" name="response-200_OK-169" type="HTTP-Response">
+        <recv channel="http-localhost-81" name="response-200_OK-233" type="HTTP-Response">
             <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
         </recv>
-        <send channel="http-localhost-81" name="request-POST-210" type="HTTP-Request">
-            <content file="mutillidaefuzz-request-POST-210.txx" format="text"/>
+        <send channel="http-localhost-81" name="request-GET-234" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-GET-234.txx" format="text"/>
         </send>
-        <recv channel="http-localhost-81" name="response-200_OK-211" type="HTTP-Response">
+        <recv channel="http-localhost-81" name="response-200_OK-235" type="HTTP-Response">
+            <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
+        </recv>
+        <send channel="http-localhost-81" name="request-POST-276" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-POST-276.txx" format="text"/>
+        </send>
+        <recv channel="http-localhost-81" name="response-200_OK-277" type="HTTP-Response">
+            <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
+        </recv>
+        <send channel="tcp" name="request-POST-324" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-POST-324.txx" format="text"/>
+        </send>
+        <recv channel="tcp" name="response-200_OK-325" type="HTTP-Response">
+            <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
+        </recv>
+        <send channel="http-localhost-81" name="request-GET-356" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-GET-356.txx" format="text"/>
+        </send>
+        <recv channel="http-localhost-81" name="response-200_OK-357" type="HTTP-Response">
+            <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
+        </recv>
+        <send channel="http-localhost-81" name="request-POST-400" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-POST-400.txx" format="text"/>
+        </send>
+        <recv channel="http-localhost-81" name="response-200_OK-401" type="HTTP-Response">
+            <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
+        </recv>
+        <send channel="tcp" name="request-POST-414" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-POST-414.txx" format="text"/>
+        </send>
+        <recv channel="tcp" name="response-200_OK-415" type="HTTP-Response">
+            <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
+        </recv>
+        <send channel="http-localhost-81" name="request-GET-416" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-GET-416.txx" format="text"/>
+        </send>
+        <recv channel="http-localhost-81" name="response-200_OK-417" type="HTTP-Response">
+            <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
+        </recv>
+        <send channel="http-localhost-81" name="request-POST-458" type="HTTP-Request">
+            <content file="mutillidaefuzz-request-POST-458.txx" format="text"/>
+        </send>
+        <recv channel="http-localhost-81" name="response-200_OK-459" type="HTTP-Response">
             <trigger parameter="expectedStatus" rule="WebAppController">'200'</trigger>
         </recv>
     </sequence>
