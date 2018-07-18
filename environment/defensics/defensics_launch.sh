@@ -12,7 +12,7 @@ echo "SEQUENCE CREATION"
 echo "CREATING SEQUENCE FROM HAR IN $2 TO $1 WITH THE TARGET HOST $targethost"
 java -jar $bootjar --create-sequence $2 --save-sequence-path $1 --target-hosts $targethost
 echo "TESTING"
-java -jar $bootjar --verbose --suite $suite --sequence $1 --index 1-300 || true
+java -jar $bootjar --verbose --suite $suite --sequence $1 --index 1-150000 || true
 echo "RESULTS"
 str=$3
 str=${str%workspace/*}synopsys/defensics/results/Web-Application/
