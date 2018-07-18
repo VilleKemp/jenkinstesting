@@ -46,7 +46,12 @@ HAR_FILE_PATH = "${env.WORKSPACE}/harParser/connections.har"
             }
         }
             
-       
+		stage ('Coverage') {
+			steps{
+					sh "python3 ASC/ASC.py ASC/petstore.json ${HAR_FILE_PATH}"
+					}
+
+				}       
     
      
     	stage ('Defensics sequence') {
