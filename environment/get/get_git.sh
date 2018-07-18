@@ -6,4 +6,5 @@ git clone https://github.com/VilleKemp/harParser.git
 
 #ASC
 git clone https://github.com/ouspg/ASC
+pip3 install haralyzer
 
