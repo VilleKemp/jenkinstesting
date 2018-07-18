@@ -31,6 +31,7 @@ This pipeline is intented to demonstrate how you can potentially add fuzz testin
 
 ### Tests
 * Junit tests that utilize Selenium. Hosted in Seleniumtesting repository
+* [ASC](https://github.com/ouspg/ASC) to check api coverage of Selenium tests
 * [Synopsys Defensics](https://www.synopsys.com/software-integrity/security-testing/fuzz-testing.html).
 
 
@@ -47,6 +48,8 @@ Jenkinsfile will fetch the above components but it requires the following in ord
 * Defensics
 * ant
 * git
+* python3
+* pip3
 
 Other:
 * Ports 8080,8181 and 81 open. Petshop will be hosted in localhost:8080 and mutillidae at localhost:81/mutillidae

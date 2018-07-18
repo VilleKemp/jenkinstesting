@@ -48,6 +48,7 @@ HAR_FILE_PATH = "${env.WORKSPACE}/harParser/connections.har"
             
 		stage ('Coverage') {
 			steps{
+					echo "CHECKING API COVERAGE"
 					sh "python3 ASC/ASC.py ASC/petstore.json ${HAR_FILE_PATH}"
 					}
 
